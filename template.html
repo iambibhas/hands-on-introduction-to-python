@@ -1,0 +1,477 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <style>
+  .title-slide hgroup h1, .title-slide hgroup p{
+    color: #efefef;
+  }
+  .logo {
+    padding: 15px;
+  }
+  </style>
+</head>
+<body style="opacity: 0">
+
+    <slides class="layout-widescreen">
+      <slide class="title-slide segue nobackground" style="background-image: url(images/cover.jpg)">
+        <aside class="gdbar"><img src="images/python-logo.png"></aside>
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+        <hgroup class="auto-fadein">
+          <h1 data-config-title><!-- populated from slide_config.json --></h1>
+          <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+          <p data-config-presenter><!-- populated from slide_config.json --></p>
+      </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What is Python?</h2>
+  </hgroup>
+  <article>
+      <ul>
+        <li>A dynamic, interpreted, high-level language</li>
+        <li>Does not require declaring the types of variables or parameters or methods</li>
+        <li>Extremely readable</li>
+        <li>Used for solving a *really* wide range of problems</li>
+        <li>Object-oriented</li>
+        <li>Does not force using Object-orientation</li>
+        <li>Has and requires common sense</li>
+    </ul>
+</article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Who all are using Python?</h2>
+        <h3>Who isn't?</h3>
+    </hgroup>
+    <p>
+        <img class="logo" src="images/logos/nasa-100.png" alt="">
+        <img class="logo" src="images/logos/yahoo.png" alt="">
+        <img class="logo" src="images/logos/google.png" alt="">
+        <img class="logo" src="images/logos/youtube.png" alt="">
+        <img class="logo" src="images/logos/reddit.png" alt="">
+        <img class="logo" src="images/logos/bittorrent.png" alt="">
+        <img class="logo" src="images/logos/dropbox.png" alt="">
+        <img class="logo" src="images/logos/ibm.png" alt="">
+        <img class="logo" src="images/logos/redhat.png" alt="">
+        <img class="logo" src="images/logos/canonical.png" alt="">
+        <img class="logo" src="images/logos/netflix.png" alt="">
+        <img class="logo" src="images/logos/quora.png" alt="">
+    </p>
+    <h3>and millions more.</h3>
+</slide>
+
+<slide>
+    <hgroup>
+      <h2>Hello World</h2>
+      <h3>How it's done with Java and C++</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="java">
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
+}
+</pre>
+<pre class="prettyprint" data-lang="C++">
+#include &lt;iostream.h&gt;
+main()
+{
+    cout << "Hello World!";
+    return 0;
+}
+</pre>
+    <h3>Requires a LOT more than just common sense.</h3>
+  </article>
+</slide>
+
+<slide>
+    <hgroup>
+      <h2>Hello World</h2>
+      <h3>How it's done with Python</h3>
+  </hgroup>
+  <article>
+<pre class="prettyprint" data-lang="python">
+print "Hello World"
+</pre>
+    <h3><b>Common sense</b>: When you want to print a string, just print it.</h3>
+  </article>
+</slide>
+
+<slide>
+    <hgroup>
+      <h2>Python Interpreters</h2>
+  </hgroup>
+  <!-- <article class="smaller"> -->
+  <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+~ $ python
+Python 2.7.4 (default, Apr 19 2013, 18:28:01)
+[GCC 4.7.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+</pre>
+<pre class="prettyprint" data-lang="bpython">
+~ $ bpython
+>>>
+</pre>
+<pre class="prettyprint" data-lang="ipython">
+~ $ ipython
+Python 2.7.4 (default, Apr 19 2013, 18:28:01)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 0.13.2 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]:
+</pre>
+  </article>
+</slide>
+<!--
+<slide hidden>
+    Hidden slides are left out of the presentation.
+</slide>
+ -->
+<slide>
+    <hgroup>
+      <h2>Python Interpreter as Calculator</h2>
+  </hgroup>
+  <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> 2+2
+4
+>>> (50-5*6)/4
+5
+>>> # Integer division returns the floor:
+... 22/7
+3
+>>> 22.0/7
+3.142857142857143
+>>> 3**3
+27
+>>> 22/0
+Traceback (most recent call last):
+  File "&lt;input&gt;", line 1, in &lt;module&gt;
+ZeroDivisionError: integer division or modulo by zero
+>>> a=1.5+0.5j
+>>> a.real
+1.5
+>>> a.imag
+0.5
+>>> _
+</pre>
+  </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Variables, Types and Operators</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> number = 10
+>>> type(number)
+&lt;type 'int'>
+>>> name = "Bibhas"
+>>> type(name)
+&lt;type 'str'>
+>>> f = 3.456
+>>> type(f)
+&lt;type 'float'>
+</pre>
+    <h3>Operators</h3>
+    <ul>
+        <li>Arithmetic: <code>+ - * / % ** //</code></li>
+        <li>Comparison: <code>== != <> > < >= <= </code></li>
+        <li>Assignment: <code>= += -= *= /= %= **=</code></li>
+        <li>Bitwise: <code>& | ^ ~ << >></code></li>
+        <li>Logical: <code>and, or, not</code></li>
+        <li>Membership: <code>in, not in</code></li>
+        <li>Identity: <code>is, is not</code></li>
+    </ul>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>String</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> name = "Bibhas Debnath"
+>>> print name[1]
+i
+>>> print len(name)
+14
+>>> print name + "X"
+Bibhas DebnathX
+</pre>
+        <h3>String Slicing</h3>
+        <img src="images/string-slicing-700.png" alt="">
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Playing with Strings</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> name = "Bibhas Debnath"
+>>> template = "Hello, %s"
+>>> print "Hello, " + name
+Hello, Bibhas Debnath
+>>> print "Hello,", name
+Hello, Bibhas Debnath
+>>> print "Hello, %s" % name
+Hello, Bibhas Debnath
+</pre>
+        <h3>Available functions</h3>
+<pre class="prettyprint" data-lang="python">
+capitalize center     count      decode
+encode     endswith   expandtabs find
+format     index      isalnum    isalpha
+isdigit    islower    isspace    istitle
+isupper    join       ljust      lower
+lstrip     partition  replace    rfind
+rindex     rjust      rpartition rsplit
+rstrip     split      splitlines startswith
+strip      swapcase   title      translate
+upper      zfill
+</pre>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Data Structure: List</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> mylist = []
+>>> mylist.append(1)
+>>> mylist.append(2)
+>>> mylist.append(3)
+>>> print(mylist[0]) # prints 1
+1
+>>> print(mylist[1]) # prints 2
+2
+>>> print(mylist[2]) # prints 3
+3
+>>>
+>>> # prints out 1,2,3
+>>> for x in mylist:
+...     print x
+...
+...
+1
+2
+3
+>>> print mylist
+[1, 2, 3]
+</pre>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Data Structure: Dictionary</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> phonebook = {}
+>>> phonebook["John"] = 938477566
+>>> phonebook["Jack"] = 938377264
+>>> phonebook["Jill"] = 947662781
+>>> print phonebook
+{'Jill': 947662781, 'John': 938477566, 'Jack': 938377264}
+>>> print phonebook['Jill']
+947662781
+>>> print phonebook.get('Jack')
+938377264
+>>> print phonebook.get('Brian', 'No number found')
+No number found
+>>> 'Jill' in phonebook
+True
+>>> phonebook.keys()
+['Jill', 'John', 'Jack']
+>>> phonebook.values()
+[947662781, 938477566, 938377264]
+</pre>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Conditions</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> number = 2
+>>> if number == 2:
+...     print "Two"
+... elif number == 3:
+...     print "Three"
+... else:
+...     print "Not two or three"
+...
+...
+Two
+</pre>
+        <h3>Facts about conditions</h3>
+        <ul>
+            <li>Indentations define blocks</li>
+            <li>There is no Switch-Case statement in Python</li>
+        </ul>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Loops</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> for x in range(0, 5):
+...     print x
+...
+...
+>>> x = 0
+>>> while x < 5:
+...     print x
+...     x += 1
+...
+...
+</pre>
+        <h3>Facts about loops</h3>
+        <ul>
+            <li><code>break</code> and <code>continue</code> statements are available</li>
+            <li>Some extra <code>else</code> magic is available</li>
+        </ul>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Function</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> def print_hello():
+...     print "Hello World"
+...
+...
+>>> print_hello()
+Hello World
+>>> def is_even(number):
+...     if number % 2 == 0:
+...         return True
+...     else:
+...         return False
+...
+...
+...
+>>> is_even(3)
+False
+>>> is_even(6)
+True
+</pre>
+        <h3>Trivia about functions</h3>
+        <ul>
+            <li>Functions are objects too!</li>
+        </ul>
+    </article>
+</slide>
+
+<slide>
+    <hgroup>
+        <h2>Class</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="python">
+>>> class MyClass:
+...     """A simple example class"""
+...     i = 12345
+...     def f(self):
+...         return 'hello world'
+...
+...
+...
+>>> myobject = MyClass()
+>>> myobject.i
+12345
+>>> myobject.f()
+'hello world'
+>>>
+</pre>
+        <h3>Trivia about classes</h3>
+        <ul>
+            <li>There is no strict private checking</li>
+        </ul>
+    </article>
+</slide>
+
+<slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/python-logo-128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>You can mail me: me@bibhas.in</p>
+  </article>
+  <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+  </p>
+</slide>
+
+<slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+  </article>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+</html>
